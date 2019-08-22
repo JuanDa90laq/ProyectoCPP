@@ -1,0 +1,27 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Web" Assembly="DevExpress.Web.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+
+<dx:ASPxGridView runat="server" CssFilePath="{0}/styles.css" CssPostfix="FinagroiOS">
+    <SettingsPager CurrentPageNumberFormat="{0}">
+        <PageSizeItemSettings ShowPopupShadow="False">
+        </PageSizeItemSettings>
+    </SettingsPager>
+    <Images SpriteCssFilePath="{0}/sprite.css">
+    </Images>
+    <Styles CssPostfix="FinagroiOS" CssFilePath="{0}/styles.css" GroupButtonWidth="44" />
+    <StylesPager>
+        <Pager ItemSpacing="0px" Spacing="0px" />
+    </StylesPager>
+    <StylesEditors>
+        <Calendar>
+            <Border BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" />
+        </Calendar>
+    </StylesEditors>
+    <SettingsPopup>
+        <HeaderFilter MinWidth="280px" MinHeight="260px"></HeaderFilter>
+        <CustomizationWindow MinWidth="240px" MinHeight="350px"  />
+    </SettingsPopup>
+</dx:ASPxGridView>
+
+
+

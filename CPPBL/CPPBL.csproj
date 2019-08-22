@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{23D11CEE-213E-4BAB-9797-C5708AB0C010}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CPPBL</RootNamespace>
+    <AssemblyName>CPPBL</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Maestros\BLActividadAgropecuaria.cs" />
+    <Compile Include="Maestros\BLAplicaCuenta.cs" />
+    <Compile Include="Maestros\BLBancoCuenta.cs" />
+    <Compile Include="Maestros\BLBancosRecaudadoresAse.cs" />
+    <Compile Include="Maestros\BLBeneficioCapital.cs" />
+    <Compile Include="Maestros\BLBeneficioLey.cs" />
+    <Compile Include="Maestros\BLCalificacion.cs" />
+    <Compile Include="Maestros\BLCodeudor.cs" />
+    <Compile Include="Maestros\BLCodigosCuentaContable.cs" />
+    <Compile Include="Maestros\BLConceptoAnual.cs" />
+    <Compile Include="Maestros\BLCondiciones.cs" />
+    <Compile Include="Maestros\BLDatosbeneficiario.cs" />
+    <Compile Include="Maestros\BLInterfazContable.cs" />
+    <Compile Include="Maestros\BLInterfazCuenta.cs" />
+    <Compile Include="Maestros\BLMenus.cs" />
+    <Compile Include="Maestros\BLObligacion.cs" />
+    <Compile Include="Maestros\BLPlanPagos.cs" />
+    <Compile Include="Maestros\BLProgama.cs" />
+    <Compile Include="Maestros\BLTipoCesion.cs" />
+    <Compile Include="Maestros\BLTipoCocepto.cs" />
+    <Compile Include="Maestros\BLTipoCuenta.cs" />
+    <Compile Include="Maestros\BLTipoProductor.cs" />
+    <Compile Include="Maestros\BLTiposCuenta.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Maestros\BLUsuarios.cs" />
+    <Compile Include="Transversal\BLValidaciones_Logs.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CPPDL\CPPDL.csproj">
+      <Project>{a1e47b6e-c9f9-4396-b23b-5aac35fe7054}</Project>
+      <Name>CPPDL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPPENL\CPPENL.csproj">
+      <Project>{34fb17ee-705c-4f00-af9e-7011bb6d68b7}</Project>
+      <Name>CPPENL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

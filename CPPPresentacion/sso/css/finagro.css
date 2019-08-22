@@ -1,0 +1,112 @@
+﻿.Encabezado {
+    background-color: #4c6671 !important;
+    text-align: right !important;
+}
+
+.PieDePagina {
+    background-color: #009688 !important;
+}
+
+.PieDePaginaTexto1 {
+    color: white;
+}
+
+.PieDePaginaTexto2 {
+    color: white;
+    text-decoration: underline;
+}
+
+.PieDePaginaTexto3 {
+    color: lightgrey;
+}
+
+.PieDePaginaTexto4 {
+    color: lightgrey;
+    text-decoration: underline;
+}
+
+.LogoInicio {
+    text-align: center;
+}
+
+.dxeDisabled_Material, .dxeDisabled_Material td.dxe {
+    background: ghostwhite !important;
+    background-color: ghostwhite !important;
+    color: #000000 !important;
+}
+
+.dxpnl-btnSelected .dxWeb_pnlExpand_Material {
+    background-image: url('WhiteBurger.axd.svg');
+}
+
+.dxWeb_pnlExpand_Material {
+    background-image: url('./WhiteBurger.axd.svg');
+}
+
+.TextoTarjetaApp {
+    color: #009688 !important;
+    font-size: 17px !important;
+}
+
+.dxcvCard_Material,
+.dxcvFlowCard_Material,
+.dxcvEmptyCard_Material,
+.dxcvEmptyHiddenCard_Material {
+    width: inherit;
+    height: inherit;
+    text-align: center;
+}
+
+.dxm-ltr .dxm-main {
+    float: right;
+}
+
+.circular {
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 25px;
+}
+
+/* Centrar elementos Horizontalmente en un DIV */
+#hideoverflow {
+    overflow: hidden;
+}
+
+#outer {
+    position: relative;
+    left: 50%;
+    float: left;
+}
+
+#inner {
+    position: relative;
+    left: -50%;
+    float: left;
+}
+
+
+.dxflGroupBox_Material > .dxflGroup_Material > .dxflChildInFirstRowSys > .dxflGroupCell_Material > .dxflItem_Material {
+    padding-top: 0px;
+}
+
+.tablahtmlformulario {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.dxgvSearchPanel_Material {
+    background: ghostwhite;
+}
+
+.dxmLite_Material .dxctToolbar_Material.dxm-main.dxmtb {
+    background-color: ghostwhite;
+}
+
+.dxgvTable_Material {
+    background-color: ghostwhite;
+}
+
+.dxgvStatusBar_Material {
+    background-color: ghostwhite;
+}

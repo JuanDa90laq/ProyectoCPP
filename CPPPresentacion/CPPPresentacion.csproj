@@ -1,0 +1,740 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5AB7523F-AAF7-46EA-BB6A-E5B2CE122113}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CPPPresentacion</RootNamespace>
+    <AssemblyName>CPPPresentacion</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.3.7\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=3.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Bootstrap.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="FinagroiOSAssembly">
+      <HintPath>..\packages\Librerias\Tema\FinagroiOSAssembly.dll</HintPath>
+    </Reference>
+    <Reference Include="FinagroMaterialAssembly">
+      <HintPath>..\packages\Librerias\Tema\FinagroMaterialAssembly.dll</HintPath>
+    </Reference>
+    <Reference Include="FinagroMaterialCompactAssembly">
+      <HintPath>..\packages\Librerias\Tema\FinagroMaterialCompactAssembly.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Librerias\librerias\librerias\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Librerias\librerias\librerias\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Librerias\librerias\librerias\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Librerias\librerias\librerias\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Librerias\librerias\librerias\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Librerias\librerias\librerias\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\Librerias\librerias\librerias\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="AccesoDenegado.aspx" />
+    <Content Include="bin\CPPPresentacion.dll" />
+    <Content Include="bin\CPPPresentacion.pdb" />
+    <Content Include="AccesoDenegado2.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Css\breadcrumb.css" />
+    <Content Include="Css\ConceptosAnuales.css" />
+    <Content Include="Css\CPPCss.css" />
+    <Content Include="Css\finagro.css" />
+    <Content Include="Css\jquery-ui-1.7.2.custom.css" />
+    <Content Include="Css\jquery-ui.min.css" />
+    <Content Include="Css\JqueryCss.css" />
+    <Content Include="DefaultOriginal.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Imagenes\calendario.ico" />
+    <Content Include="Imagenes\calendario.png" />
+    <Content Include="Imagenes\Cpp.png" />
+    <Content Include="Log\2019-05-23.txt" />
+    <Content Include="Log\2019-05-24.txt" />
+    <Content Include="Log\2019-05-27.txt" />
+    <Content Include="Maestros\CCPAdminBeneficiosCapital.aspx" />
+    <Content Include="Maestros\CPPBeneficioLey.aspx" />
+    <Content Include="Maestros\CCPCodigoCuentaContable.aspx" />
+    <Content Include="Maestros\CCPCuentasInterfaces.aspx" />
+    <Content Include="Maestros\CPPBancoRecaudadorAse.aspx" />
+    <Content Include="Maestros\CPPCodeudor.aspx" />
+    <Content Include="Maestros\CPPConceptosAnuales.aspx" />
+    <Content Include="Maestros\CPPDatosBeneficiarios.aspx" />
+    <Content Include="Maestros\CPPObligacion.aspx" />
+    <Content Include="Maestros\CPPPlanDePagos.aspx" />
+    <Content Include="Maestros\CPPDatosBeneficiariosOriginal.aspx" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Maestros\CPPPrograma.aspx" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.maskedinput.js" />
+    <Content Include="Scripts\Js\Maestros\JsCodeudor.js" />
+    <Content Include="Scripts\Js\Maestros\JsCPPBancoRecaudador.js" />
+    <Content Include="Scripts\Js\Maestros\JsCPPBeneficioLey.js" />
+    <Content Include="Scripts\Js\Maestros\JsCppBeneficiosCapital.js" />
+    <Content Include="Scripts\Js\Maestros\JsCPPDatosBeneficiario.js" />
+    <Content Include="Scripts\Js\Maestros\JsCPPInterfaz.js" />
+    <Content Include="Scripts\Js\Maestros\JsCPPObligacion.js" />
+    <Content Include="Scripts\Js\Maestros\JsCPPPlanDePagos.js" />
+    <Content Include="Scripts\Js\Maestros\JsDatosbeneficiario.js" />
+    <Content Include="SSODefault.aspx" />
+    <Content Include="App_Themes\FinagroiOS\ASPxBinaryImage.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxButton.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxButtonEdit.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxCalendar.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxCallbackPanel.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxCaptcha.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxCardView.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxCheckBox.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxCheckBoxList.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxCloudControl.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxColorEdit.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxComboBox.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxDataView.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxDateEdit.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxDateNavigator.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxDockPanel.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxDocumentViewer.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxDropDownEdit.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxFileManager.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxFilterControl.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxFloatingActionButton.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxFormLayout.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxGridLookup.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxGridView.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxHeadline.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxHint.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxHtmlEditor.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxHyperLink.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxImage.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxImageGallery.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxImageSlider.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxImageZoom.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxImageZoomNavigator.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxLabel.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxListBox.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxLoadingPanel.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxMemo.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxMenu.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxNavBar.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxNewsControl.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxPageControl.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxPager.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxPanel.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxPivotGrid.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxPopupControl.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxPopupMenu.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxProgressBar.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxRadioButton.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxRadioButtonList.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxRatingControl.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxRibbon.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxRichEdit.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxRoundPanel.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxScheduler.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxSiteMapControl.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxSpellChecker.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxSpinEdit.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxSplitter.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxSpreadsheet.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxTabControl.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxTextBox.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxTimeEdit.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxTitleIndex.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxTokenBox.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxTrackBar.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxTreeList.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxTreeView.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxUploadControl.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxValidationSummary.skin" />
+    <Content Include="App_Themes\FinagroiOS\ASPxVerticalGrid.skin" />
+    <Content Include="App_Themes\FinagroiOS\MonthEdit.skin" />
+    <Content Include="App_Themes\FinagroiOS\RecurrenceTypeEdit.skin" />
+    <Content Include="App_Themes\FinagroiOS\ReportDocumentMap.skin" />
+    <Content Include="App_Themes\FinagroiOS\ReportParametersPanel.skin" />
+    <Content Include="App_Themes\FinagroiOS\ReportToolbar.skin" />
+    <Content Include="App_Themes\FinagroiOS\ReportViewer.skin" />
+    <Content Include="App_Themes\FinagroiOS\WebChartControl.skin" />
+    <Content Include="App_Themes\FinagroiOS\WeekDaysEdit.skin" />
+    <Content Include="App_Themes\FinagroiOS\WeekOfMonthEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxBinaryImage.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxButton.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxButtonEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxCalendar.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxCallbackPanel.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxCaptcha.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxCardView.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxCheckBox.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxCheckBoxList.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxCloudControl.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxColorEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxComboBox.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxDataView.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxDateEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxDateNavigator.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxDockPanel.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxDocumentViewer.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxDropDownEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxFileManager.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxFilterControl.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxFloatingActionButton.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxFormLayout.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxGridLookup.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxGridView.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxHeadline.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxHint.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxHtmlEditor.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxHyperLink.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxImage.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxImageGallery.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxImageSlider.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxImageZoom.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxImageZoomNavigator.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxLabel.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxListBox.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxLoadingPanel.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxMemo.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxMenu.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxNavBar.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxNewsControl.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxPageControl.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxPager.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxPanel.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxPivotGrid.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxPopupControl.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxPopupMenu.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxProgressBar.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxRadioButton.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxRadioButtonList.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxRatingControl.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxRibbon.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxRichEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxRoundPanel.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxScheduler.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxSiteMapControl.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxSpellChecker.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxSpinEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxSplitter.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxSpreadsheet.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxTabControl.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxTextBox.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxTimeEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxTitleIndex.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxTokenBox.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxTrackBar.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxTreeList.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxTreeView.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxUploadControl.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxValidationSummary.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ASPxVerticalGrid.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\MonthEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\RecurrenceTypeEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ReportDocumentMap.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ReportParametersPanel.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ReportToolbar.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\ReportViewer.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\WebChartControl.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\WeekDaysEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterialCompact\WeekOfMonthEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxBinaryImage.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxButton.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxButtonEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxCalendar.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxCallbackPanel.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxCaptcha.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxCardView.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxCheckBox.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxCheckBoxList.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxCloudControl.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxColorEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxComboBox.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxDataView.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxDateEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxDateNavigator.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxDockPanel.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxDocumentViewer.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxDropDownEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxFileManager.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxFilterControl.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxFloatingActionButton.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxFormLayout.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxGridLookup.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxGridView.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxHeadline.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxHint.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxHtmlEditor.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxHyperLink.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxImage.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxImageGallery.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxImageSlider.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxImageZoom.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxImageZoomNavigator.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxLabel.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxListBox.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxLoadingPanel.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxMemo.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxMenu.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxNavBar.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxNewsControl.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxPageControl.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxPager.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxPanel.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxPivotGrid.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxPopupControl.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxPopupMenu.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxProgressBar.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxRadioButton.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxRadioButtonList.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxRatingControl.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxRibbon.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxRichEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxRoundPanel.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxScheduler.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxSiteMapControl.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxSpellChecker.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxSpinEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxSplitter.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxSpreadsheet.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxTabControl.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxTextBox.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxTimeEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxTitleIndex.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxTokenBox.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxTrackBar.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxTreeList.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxTreeView.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxUploadControl.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxValidationSummary.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ASPxVerticalGrid.skin" />
+    <Content Include="App_Themes\FinagroMaterial\MonthEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterial\RecurrenceTypeEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ReportDocumentMap.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ReportParametersPanel.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ReportToolbar.skin" />
+    <Content Include="App_Themes\FinagroMaterial\ReportViewer.skin" />
+    <Content Include="App_Themes\FinagroMaterial\WebChartControl.skin" />
+    <Content Include="App_Themes\FinagroMaterial\WeekDaysEdit.skin" />
+    <Content Include="App_Themes\FinagroMaterial\WeekOfMonthEdit.skin" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Imagenes\finagro.png" />
+    <Content Include="Imagenes\finagro_blanco.png" />
+    <Content Include="Imagenes\fondosCombos.jpg" />
+    <Content Include="Imagenes\logo.png" />
+    <Content Include="Maestros\CPPAdminEntidadesAgropecuarias.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Js\Maestros\JsActividadAgropecuaria.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="sso\css\breadcrumb.css" />
+    <Content Include="sso\css\finagro.css" />
+    <Content Include="sso\css\sprite.svg" />
+    <Content Include="sso\css\WhiteBurger.axd.svg" />
+    <Content Include="sso\img\App_1.png" />
+    <Content Include="sso\img\App_10.png" />
+    <Content Include="sso\img\App_11.png" />
+    <Content Include="sso\img\App_2.png" />
+    <Content Include="sso\img\App_3.png" />
+    <Content Include="sso\img\App_4.png" />
+    <Content Include="sso\img\App_5.png" />
+    <Content Include="sso\img\App_6.png" />
+    <Content Include="sso\img\App_7.png" />
+    <Content Include="sso\img\App_8.png" />
+    <Content Include="sso\img\App_9.png" />
+    <Content Include="sso\img\finagro.png" />
+    <Content Include="sso\img\finagro_blanco.png" />
+    <Content Include="sso\img\logo.png" />
+    <Content Include="sso\img\sso.png" />
+    <Content Include="sso\img\usuario.png" />
+    <Content Include="Bundle.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery.maskMoney.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoDenegado.aspx.cs">
+      <DependentUpon>AccesoDenegado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccesoDenegado.aspx.designer.cs">
+      <DependentUpon>AccesoDenegado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccesoDenegado2.aspx.cs">
+      <DependentUpon>AccesoDenegado2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccesoDenegado2.aspx.designer.cs">
+      <DependentUpon>AccesoDenegado2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultOriginal.aspx.cs">
+      <DependentUpon>DefaultOriginal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultOriginal.aspx.designer.cs">
+      <DependentUpon>DefaultOriginal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Generica\Validaciones.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\CCPAdminBeneficiosCapital.aspx.cs">
+      <DependentUpon>CCPAdminBeneficiosCapital.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\CCPAdminBeneficiosCapital.aspx.designer.cs">
+      <DependentUpon>CCPAdminBeneficiosCapital.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\CPPBeneficioLey.aspx.cs">
+      <DependentUpon>CPPBeneficioLey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\CPPBeneficioLey.aspx.designer.cs">
+      <DependentUpon>CPPBeneficioLey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\CCPCodigoCuentaContable.aspx.cs">
+      <DependentUpon>CCPCodigoCuentaContable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\CCPCodigoCuentaContable.aspx.designer.cs">
+      <DependentUpon>CCPCodigoCuentaContable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\CCPCuentasInterfaces.aspx.cs">
+      <DependentUpon>CCPCuentasInterfaces.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\CCPCuentasInterfaces.aspx.designer.cs">
+      <DependentUpon>CCPCuentasInterfaces.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\CPPAdminEntidadesAgropecuarias.aspx.cs">
+      <DependentUpon>CPPAdminEntidadesAgropecuarias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\CPPAdminEntidadesAgropecuarias.aspx.designer.cs">
+      <DependentUpon>CPPAdminEntidadesAgropecuarias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\CPPBancoRecaudadorAse.aspx.cs">
+      <DependentUpon>CPPBancoRecaudadorAse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\CPPBancoRecaudadorAse.aspx.designer.cs">
+      <DependentUpon>CPPBancoRecaudadorAse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\CPPCodeudor.aspx.cs">
+      <DependentUpon>CPPCodeudor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\CPPCodeudor.aspx.designer.cs">
+      <DependentUpon>CPPCodeudor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\CPPConceptosAnuales.aspx.cs">
+      <DependentUpon>CPPConceptosAnuales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\CPPConceptosAnuales.aspx.designer.cs">
+      <DependentUpon>CPPConceptosAnuales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\CPPDatosBeneficiarios.aspx.cs">
+      <DependentUpon>CPPDatosBeneficiarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\CPPDatosBeneficiarios.aspx.designer.cs">
+      <DependentUpon>CPPDatosBeneficiarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\CPPDatosBeneficiariosOriginal.aspx.cs">
+      <DependentUpon>CPPDatosBeneficiariosOriginal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\CPPDatosBeneficiariosOriginal.aspx.designer.cs">
+      <DependentUpon>CPPDatosBeneficiariosOriginal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\CPPObligacion.aspx.cs">
+      <DependentUpon>CPPObligacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\CPPObligacion.aspx.designer.cs">
+      <DependentUpon>CPPObligacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\CPPPlanDePagos.aspx.cs">
+      <DependentUpon>CPPPlanDePagos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\CPPPlanDePagos.aspx.designer.cs">
+      <DependentUpon>CPPPlanDePagos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\CPPPrograma.aspx.cs">
+      <DependentUpon>CPPPrograma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maestros\CPPPrograma.aspx.designer.cs">
+      <DependentUpon>CPPPrograma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SSODefault.aspx.cs">
+      <DependentUpon>SSODefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SSODefault.aspx.designer.cs">
+      <DependentUpon>SSODefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SSOMaster.Master.cs">
+      <DependentUpon>SSOMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SSOMaster.Master.designer.cs">
+      <DependentUpon>SSOMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="sso\AcquireRequestState.cs" />
+    <Compile Include="sso\SSOClases.cs" />
+    <Compile Include="sso\SSOEmail.cs" />
+    <Compile Include="sso\SSOSesion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Logs\" />
+    <Folder Include="Negocio\Cagues\" />
+    <Folder Include="Procesos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <Content Include="SSOMaster.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CPPBL\CPPBL.csproj">
+      <Project>{23d11cee-213e-4bab-9797-c5708ab0c010}</Project>
+      <Name>CPPBL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPPENL\CPPENL.csproj">
+      <Project>{34fb17ee-705c-4f00-af9e-7011bb6d68b7}</Project>
+      <Name>CPPENL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51646</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51646/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

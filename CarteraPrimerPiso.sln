@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPPDL", "CPPDL\CPPDL.csproj", "{A1E47B6E-C9F9-4396-B23B-5AAC35FE7054}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPPBL", "CPPBL\CPPBL.csproj", "{23D11CEE-213E-4BAB-9797-C5708AB0C010}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPPENL", "CPPENL\CPPENL.csproj", "{34FB17EE-705C-4F00-AF9E-7011BB6D68B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPPPresentacion", "CPPPresentacion\CPPPresentacion.csproj", "{5AB7523F-AAF7-46EA-BB6A-E5B2CE122113}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1E47B6E-C9F9-4396-B23B-5AAC35FE7054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1E47B6E-C9F9-4396-B23B-5AAC35FE7054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1E47B6E-C9F9-4396-B23B-5AAC35FE7054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1E47B6E-C9F9-4396-B23B-5AAC35FE7054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23D11CEE-213E-4BAB-9797-C5708AB0C010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23D11CEE-213E-4BAB-9797-C5708AB0C010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23D11CEE-213E-4BAB-9797-C5708AB0C010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23D11CEE-213E-4BAB-9797-C5708AB0C010}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34FB17EE-705C-4F00-AF9E-7011BB6D68B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34FB17EE-705C-4F00-AF9E-7011BB6D68B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34FB17EE-705C-4F00-AF9E-7011BB6D68B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34FB17EE-705C-4F00-AF9E-7011BB6D68B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AB7523F-AAF7-46EA-BB6A-E5B2CE122113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AB7523F-AAF7-46EA-BB6A-E5B2CE122113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AB7523F-AAF7-46EA-BB6A-E5B2CE122113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AB7523F-AAF7-46EA-BB6A-E5B2CE122113}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B37868A0-4BB8-4C18-8F72-7186980968DE}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://vitis:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CPPBL\\CPPBL.csproj
+		SccProjectName1 = CPPBL
+		SccLocalPath1 = CPPBL
+		SccProjectUniqueName2 = CPPENL\\CPPENL.csproj
+		SccProjectName2 = CPPENL
+		SccLocalPath2 = CPPENL
+		SccProjectUniqueName3 = CPPPresentacion\\CPPPresentacion.csproj
+		SccProjectName3 = CPPPresentacion
+		SccLocalPath3 = CPPPresentacion
+		SccProjectUniqueName4 = CPPDL\\CPPDL.csproj
+		SccProjectName4 = CPPDL
+		SccLocalPath4 = CPPDL
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://vitis:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CPPBL\\CPPBL.csproj
+		SccProjectName1 = CPPBL
+		SccLocalPath1 = CPPBL
+		SccProjectUniqueName3 = CPPDL\\CPPDL.csproj
+		SccProjectName3 = CPPDL
+		SccLocalPath3 = CPPDL
+	EndGlobalSection
+EndGlobal

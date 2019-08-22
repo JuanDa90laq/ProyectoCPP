@@ -1,0 +1,73 @@
+﻿.menuContainer {
+    float: left;
+    width: 53%;
+}
+
+.description {
+    float: left;
+    width: 47%;
+}
+
+.wrapper {
+    float: left;
+    clear: both;
+    width: 100%
+}
+
+.linkMenu {
+    background: none !important;
+    border: 0 !important;
+    color: #162436 !important;
+    padding: 0 !important;
+    text-decoration: none !important;
+    float: left !important;
+}
+
+.linkMenu .dxm-selected {
+    background: none !important;
+    border: 0 !important;
+    color: rgba(102, 102, 102, 0.5) !important;
+    padding: 0 !important;
+    text-decoration: none !important;
+}
+
+.linkMenu a:hover,
+.linkMenu a:hover * {
+    text-decoration: underline !important;
+}
+
+.linkMenuItem,
+.linkMenuItem > div {
+    /*padding: 0 !important;*/            
+}
+
+.linkMenuSeparator {
+    background-image: url("./sprite.svg?v=65ac4bb93de4ee437fdd55dddb8e755de90271c0");    
+    content: ' ';
+    vertical-align: middle;
+    display: inline-block;    
+    background-repeat: no-repeat;
+    background-size: 8.666666666666666em 78.33333333333333em;
+    background-position: -0.16666666666666666em -1.5em;
+    width: 1em;
+    height: 1em;
+    /*padding: 2px 0;*/
+    font-size: 1em;
+    margin-top: 16px;
+}
+
+.linkMenuSeparator b {
+    background-color: inherit !important;
+}
+
+@media (max-width: 576px) {
+    .menuContainer {
+        float:none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .description {
+        float:none;
+        width: 100% !important;
+    }
+}

@@ -1,0 +1,27 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Web.ASPxTreeList" Assembly="DevExpress.Web.ASPxTreeList.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+
+<dx:ASPxTreeList runat="server" CssFilePath="{0}/styles.css" CssPostfix="FinagroiOS">
+    <Settings ShowTreeLines="False" />
+    <SettingsPager CurrentPageNumberFormat="{0}">
+        <PageSizeItemSettings ShowPopupShadow="False" />
+    </SettingsPager>
+    <Images SpriteCssFilePath="{0}/sprite.css" />
+    <Styles CssPostfix="FinagroiOS" CssFilePath="{0}/styles.css" />
+    <StylesPager>
+        <Pager ItemSpacing="1px" Spacing="1px" />
+    </StylesPager>
+    <StylesEditors>
+        <Calendar>
+            <Border BorderColor="Silver" BorderStyle="Solid" BorderWidth="1px" />
+        </Calendar>
+    </StylesEditors>
+    <SettingsCustomizationWindow PopupWidth="220px" PopupHeight="270px" />
+    <SettingsPopup>
+        <HeaderFilter MinWidth="280px" MinHeight="150px" />
+        <CustomizationWindow MinWidth="240px" MinHeight="350px"  />
+    </SettingsPopup>
+</dx:ASPxTreeList>
+
+
+

@@ -1,0 +1,358 @@
+﻿<link href="css/breadcrumb.css" rel="stylesheet" type="text/css" />
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SSOMaster.master.cs" Inherits="SSO.Finagro.SSOMaster" %>
+
+<%@ Register Assembly="DevExpress.Web.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<!DOCTYPE html>
+<html>
+
+<head runat="server">
+    <title>Finagro :: Fondo para el financiamiento del sector agropecuario</title>
+    <link href="Css/CPPCss.css" rel="stylesheet" type="text/css" />    
+    <link href="Css/JqueryCss.css" rel="stylesheet" type="text/css"/>
+    <link href="sso/css/finagro.css" rel="stylesheet" type="text/css" />
+    <link href="sso/css/breadcrumb.css" rel="stylesheet" type="text/css" />  
+    <link rel="shortcut icon" href="https://www.finagro.com.co/sites/default/files/image002.jpg" type="image/jpeg" />    
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <script type="text/javascript">
+
+        function DisableBackButton() {
+            window.history.forward()
+        }
+
+        DisableBackButton();
+        window.onload = DisableBackButton;
+        window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+        window.onunload = function () { void (0) }
+
+        var widthInPercent = 80;
+
+        function OnInit(s, e) {
+            AjustarTamaño();
+            ASPxClientUtils.AttachEventToElement(window, "resize", function (evt) {
+                AjustarTamaño();
+            });
+        }
+
+        function AjustarTamaño() {
+            var width = Math.max(0, document.documentElement.clientWidth);
+            pcRecomendaciones.SetWidth(width * (widthInPercent / 100));
+            pcAviso.SetWidth(width * (widthInPercent / 100));
+            pcPrivacidad.SetWidth(width * (widthInPercent / 100));
+            pcMensajeSitio.SetWidth(width * (widthInPercent / 100));
+        }
+
+    </script>
+
+</head>
+
+<body style="background-color: ghostwhite">
+
+    <!-- Latest compiled and minified JavaScript -->
+    
+
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>               
+                
+            </Scripts>
+        </asp:ScriptManager>
+        <asp:HiddenField ID="hExpira" runat="server" />
+        <div id="header">
+            <dx:ASPxCallbackPanel ID="cbpEncabezado" runat="server" FixedPosition="WindowTop" CssClass="Encabezado" Collapsible="true">
+                <SettingsAdaptivity CollapseAtWindowInnerWidth="800" />
+                <PanelCollection>
+                    <dx:PanelContent>
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="text-align: left">
+                                    <dx:ASPxButton runat="server" ID="FinagroHomeApp" EnableTheming="false" RenderMode="Link"
+                                        PostBackUrl="~/SSOaplicativos.aspx">
+                                        <Image Url="Imagenes/finagro_blanco.png" Height="65px" />
+                                    </dx:ASPxButton>
+                                </td>
+                                <td style="text-align: right">
+                                    <dx:ASPxMenu ID="mUsuario" runat="server" EncodeHtml="False" AllowSelectItem="True" Orientation="Horizontal"
+                                        HorizontalAlign="Right" ShowPopOutImages="True" AutoPostBack="false"
+                                        NavigateUrlField="URL">
+                                    </dx:ASPxMenu>
+                                </td>                                
+                                <td style="width: 5px; height: 10px;"></td>
+                               <%-- <td style="width: 50px; height: 40px;">
+                                    <dx:ASPxImage runat="server" ID="ImagenUsuario" ImageUrl="Imagenes/Cpp.png" Width="100px" ></dx:ASPxImage>
+                                </td>--%>
+                            </tr>
+                        </table>
+                    </dx:PanelContent>
+                </PanelCollection>
+            </dx:ASPxCallbackPanel>
+        </div>
+        <div>
+            <dx:ASPxMenu runat="server" ID="mMiga" CssClass="linkMenu" SeparatorCssClass="linkMenuSeparator" ItemLinkMode="TextOnly">
+                <ItemStyle CssClass="linkMenuItem" />
+            </dx:ASPxMenu>
+        </div>
+        <%--<div style="margin-left:700px;" class="LbTitulosbordesSombrasNombre">
+            <dx:ASPxLabel ID="lbBienvenida" runat="server" Text="Bienevenido(a) " CssClass="LbTitulosFeatures tipoLetra"/>
+        </div>--%>
+        <div id="body">
+            <asp:ContentPlaceHolder ID="cphCentro" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="footer" style="text-align: center">
+            <dx:ASPxCallbackPanel ID="BottomPanel" runat="server" FixedPosition="WindowBottom" CssClass="PieDePagina" Collapsible="true">
+                <SettingsAdaptivity CollapseAtWindowInnerWidth="800" />
+                <PanelCollection>
+                    <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
+                        <div class="PieDePaginaTexto1">
+                            Al usar este sitio, acepta nuestro 
+                        <dx:ASPxHyperLink ID="ASPxHyperLink1" runat="server" Text="Aviso Legal" CssClass="PieDePaginaTexto2">
+                            <ClientSideEvents Click="function(s, e){pcAviso.Show();}" />
+                        </dx:ASPxHyperLink>
+                            y nuestra
+                            <dx:ASPxHyperLink ID="hlPrivacidad" runat="server" Text="Politica de Privacidad." CssClass="PieDePaginaTexto2">
+                                <ClientSideEvents Click="function(s, e){pcPrivacidad.Show();}" />
+                            </dx:ASPxHyperLink>
+                            No olvide verificar nuestras
+                                <dx:ASPxHyperLink ID="hlRecomendaciones" runat="server" Text="Recomendaciones de Seguridad."
+                                    CssClass="PieDePaginaTexto2">
+                                    <ClientSideEvents Click="function(s, e){pcRecomendaciones.Show();}" />
+                                </dx:ASPxHyperLink>
+                        </div>
+                        <div class="PieDePaginaTexto3">
+                            Copyright © 2013 - 2018
+                            <dx:ASPxHyperLink ID="hlFinagro" runat="server" Text="FINAGRO" CssClass="PieDePaginaTexto4"
+                                NavigateUrl="http://www.finagro.com.co/" ToolTip="Visita nuestra página Web">
+                            </dx:ASPxHyperLink>
+                            - Carrera 13 No. 28-17 - Línea de Atención: 320 3377 - Bogotá, D.C. - Colombia
+                        </div>
+                    </dx:PanelContent>
+                </PanelCollection>
+            </dx:ASPxCallbackPanel>
+        </div>
+        <div>
+            <dx:ASPxPopupControl ID="ASPxPopupControl1" runat="server" ClientInstanceName="pcRecomendaciones" Modal="true"
+                HeaderText="Recomendaciones de Seguridad" PopupElementID="hlRecomendaciones" PopupVerticalAlign="WindowCenter"
+                PopupHorizontalAlign="WindowCenter" AllowResize="false" CloseAction="CloseButton">
+                <ContentCollection>
+                    <dx:PopupControlContentControl>
+                        <ol>
+                            <li>Instalar y mantener actualizado su computador con antivirus y antispyware, con una periodicidad semanal, ya que estos lo protegen contra espionaje y robo de información.</li>
+                            <li>Mantener su navegador con las últimas actualizaciones y parches de seguridad con una periodicidad mensual.</li>
+                            <li>Instalar y mantener actualizado en su computador un firewall personal.</li>
+                            <li>Evite conectarse a redes inalámbricas desde sitios públicos, pues existe un riesgo muy alto de que sean redes con poca seguridad que permitan capturar toda su información.</li>
+                            <li>Realizar cambios de clave de manera preventiva, esto minimiza el riesgo que alguien pueda utilizarla para robar su información.</li>
+                        </ol>
+                    </dx:PopupControlContentControl>
+                </ContentCollection>
+                <ClientSideEvents Init="OnInit" />
+            </dx:ASPxPopupControl>
+            <dx:ASPxPopupControl ID="ASPxPopupControl2" runat="server" ClientInstanceName="pcAviso" Modal="true"
+                HeaderText="Aviso Legal" PopupElementID="AvisoLegal" PopupVerticalAlign="WindowCenter"
+                PopupHorizontalAlign="WindowCenter" AllowResize="false" CloseAction="CloseButton"
+                ScrollBars="None">
+                <ContentCollection>
+                    <dx:PopupControlContentControl>
+                        <ol>
+                            <li>FINAGRO publica en sus páginas web información relacionada con el tipo de actividad, productos y 
+                                                servicios que ofrece, encontrándose dicha información sujeta a cambios.</li>
+                            <li>FINAGRO no se responsabiliza de daños o perjuicios derivados del acceso, uso o mala utilización 
+                                                de los contenidos de la Web, ni de las posibles discrepancias que puedan surgir entre la versión 
+                                                de sus documentos impresos y la versión electrónica de los mismos publicados en sus páginas web, 
+                                                como así tampoco de la información publicada en los sitios sobre los cuales posee vínculos o de 
+                                                la imposibilidad de acceder a los mismos.</li>
+                            <li>FINAGRO se reserva el derecho a actualizar, modificar o eliminar la información contenida en sus 
+                                                páginas web pudiendo incluso limitar o no permitir el acceso a dicha información.</li>
+                            <li>FINAGRO prohíbe la copia, duplicación, redistribución, comercialización o cualquier otra actividad 
+                                                que se pueda realizar con los contenidos de sus páginas web ni aun citando las fuentes, salvo 
+                                                consentimiento por escrito de FINAGRO.</li>
+                        </ol>
+                    </dx:PopupControlContentControl>
+                </ContentCollection>
+                <ClientSideEvents Init="OnInit" />
+            </dx:ASPxPopupControl>
+            <dx:ASPxPopupControl ID="ASPxPopupControl3" runat="server" ClientInstanceName="pcPrivacidad" Modal="true"
+                HeaderText="Privacidad" PopupElementID="Privacidad" PopupVerticalAlign="WindowCenter"
+                PopupHorizontalAlign="WindowCenter" AllowResize="false" CloseAction="CloseButton"
+                ScrollBars="None">
+                <ContentCollection>
+                    <dx:PopupControlContentControl>
+                        <b>Uso de la información personal</b><br />
+                        Al acceder a los aplicativos de FINAGRO y registrar información que contenga datos personales 
+                                            o financieros de terceros, me(nos) encuentro(encontramos) obligado(s) a:
+                                        <ol>
+                                            <li>Contar con todas las autorizaciones pertinentes de acuerdo con la ley 1581 de 2012 y que 
+                                                las finalidades para las que la entrego(amos) han sido plenamente conocidas y aceptadas 
+                                                por el titular y en ese sentido libero(amos) a FINAGRO de cualquier responsabilidad por
+                                                el uso que le dé a los datos de acuerdo con las finalidades para las cuales se le hace
+                                                entrega de la información a través de la página de internet.</li>
+                                            <li>Garantizar, en todo momento, a los titulares de la Información el pleno ejercicio del
+                                                 derecho al  acceso a la misma, es decir a conocer, y a solicitar la actualización y 
+                                                rectificación de los registros que sobre ellos se almacenen.</li>
+                                            <li>La lectura y entendimiento del Aviso de privacidad de FINAGRO disponible en la página web del mismo.</li>
+                                            <li>Garantizar que en la recolección, tratamiento y circulación de datos, se respetarán 
+                                                los derechos consagrados en las leyes de protección de datos personales.</li>
+                                            <li>Permitir el acceso a la información únicamente a los titulares de la misma y no usarla 
+                                                para fines de propaganda política u otros que no hayan sido autorizados por el titular o la Ley.</li>
+                                            <li>Contar con un sistema de seguridad y condiciones técnicas suficientes para conservar 
+                                                con las debidas seguridades los registros almacenados para impedir su deterioro, 
+                                                pérdida, alteración, uso no autorizado o fraudulento.</li>
+                                            <li>En general, dar cumplimiento a las normas que protegen la información de carácter personal en Colombia.</li>
+                                        </ol>
+                        <b>Ley y jurisdicción</b><br />
+                        Toda controversia que se pueda presentar en la interpretación o aplicación de la presente 
+                                            política de consulta a las bases de datos de FINAGRO estará sujeta a las normas de 
+                                            protección personal establecidas en la República de Colombia y las autoridades administrativas 
+                                            o jurisdiccionales competentes para la resolución de cualquier inquietud, queja o demanda sobre las mismas.                                        
+                                    
+                    </dx:PopupControlContentControl>
+                </ContentCollection>
+                <ClientSideEvents Init="OnInit" />
+            </dx:ASPxPopupControl>
+            <dx:ASPxPopupControl ID="pcMensajeSitio" runat="server" ClientInstanceName="pcMensajeSitio" Modal="true"
+                HeaderText="Privacidad" PopupElementID="Privacidad" PopupVerticalAlign="WindowCenter"
+                PopupHorizontalAlign="WindowCenter" AllowResize="false" CloseAction="CloseButton"
+                ScrollBars="None">
+                <ContentCollection>
+                    <dx:PopupControlContentControl>
+                        <table>
+                            <tr>
+                                <td style="vertical-align: top">
+                                    <dx:ASPxButton ID="btnMensaje" runat="server" AllowFocus="False" AutoPostBack="False" CausesValidation="False"
+                                        Cursor="auto" UseSubmitBehavior="False" RenderMode="Link" ClientInstanceName="btnMensaje">
+                                        <Image IconID="status_warning_32x32"></Image>
+                                        <BackgroundImage Repeat="NoRepeat" />
+                                    </dx:ASPxButton>
+                                </td>
+                                <td style="width: 20px; vertical-align: top;"></td>
+                                <td>
+                                    <dx:ASPxLabel ID="lblMensaje" runat="server" Text="ASPxLabel" EncodeHtml="False"
+                                        ClientInstanceName="lblMensaje">
+                                    </dx:ASPxLabel>
+                                </td>
+                            </tr>
+                        </table>
+                    </dx:PopupControlContentControl>
+                </ContentCollection>
+                <ClientSideEvents Init="OnInit" />
+            </dx:ASPxPopupControl>
+
+
+            <dx:ASPxPopupControl ID="ppSession" runat="server" Modal="true" HeaderText="Sesión" PopupVerticalAlign="WindowCenter"
+                PopupHorizontalAlign="WindowCenter" AllowResize="false" CloseAction="CloseButton" ClientInstanceName="ppSession"
+                ScrollBars="None" Width="360px">
+                <ContentCollection>
+                    <dx:PopupControlContentControl>
+                        <table>
+                            <tr>
+                                <td style="vertical-align: top">
+                                    <dx:ASPxButton ID="dvBtnmensaje" runat="server" AllowFocus="False" AutoPostBack="False" CausesValidation="False"
+                                        Cursor="auto" UseSubmitBehavior="False" RenderMode="Link" ClientInstanceName="dvBtnmensaje">
+                                        <Image IconID="status_warning_32x32"></Image>
+                                        <BackgroundImage Repeat="NoRepeat" />
+                                    </dx:ASPxButton>
+                                </td>
+                                <td>
+                                    <dx:ASPxLabel ID="dvLbNebsaje" runat="server" Text="ASPxLabel" EncodeHtml="False" ClientInstanceName="dvLbNebsaje">
+                                    </dx:ASPxLabel>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="align-items: center">
+
+                                    <dx:ASPxButton ID="dvBtnActualizar" runat="server" Text="Actualizar">
+                                        <ClientSideEvents Click="function(s, e) { ActualizarToken(); ppSession.Hide(); }" />
+                                    </dx:ASPxButton>
+                                    <dx:ASPxButton ID="dvBtnCerrar" runat="server" Text="Salir">
+                                        <ClientSideEvents Click="function(s, e) {  CerrarCookieToken(); ppSession.Hide(); }" />
+                                    </dx:ASPxButton>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </dx:PopupControlContentControl>
+                </ContentCollection>
+                <ClientSideEvents Init="OnInit" />
+            </dx:ASPxPopupControl>
+
+            <dx:ASPxPopupControl ID="ppSessionCookie" runat="server" Modal="true" HeaderText="Error Inicio Sesión" PopupVerticalAlign="WindowCenter"
+                PopupHorizontalAlign="WindowCenter" AllowResize="false" CloseAction="CloseButton" ClientInstanceName="ppSessionCookie"
+                ScrollBars="None" Width="400px">
+                <ContentCollection>
+                    <dx:PopupControlContentControl>
+                        <table>
+                            <tr>
+                                <td style="vertical-align: top">
+                                    <dx:ASPxButton ID="BtnMensajeCookie" runat="server" AllowFocus="False" AutoPostBack="False" CausesValidation="False"
+                                        Cursor="auto" UseSubmitBehavior="False" RenderMode="Link" ClientInstanceName="BtnMensajeCookie">
+                                        <Image IconID="status_warning_32x32"></Image>
+                                        <BackgroundImage Repeat="NoRepeat" />
+                                    </dx:ASPxButton>
+                                </td>
+                                <td>
+                                    <dx:ASPxLabel ID="LbMensajeSesionCookie" runat="server" Text="Inicio de sesión erroneo" EncodeHtml="False" ClientInstanceName="LbMensajeSesionCookie">
+                                    </dx:ASPxLabel>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="align-items: center">
+
+                                    <dx:ASPxButton ID="btnAceptarSesion" runat="server" Text="Aceptar">
+                                        <ClientSideEvents Click="function(s, e) { ppSessionCookie.Hide(); }" />
+                                    </dx:ASPxButton>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </dx:PopupControlContentControl>
+                </ContentCollection>
+                <ClientSideEvents Init="OnInit" />
+            </dx:ASPxPopupControl>
+
+
+            <dx:ASPxPopupControl ID="ppVensimientoPSW" runat="server" Modal="true" HeaderText="Aviso de Expiración de Contraseña" PopupVerticalAlign="WindowCenter"
+                PopupHorizontalAlign="WindowCenter" AllowResize="false" CloseAction="CloseButton" ClientInstanceName="ppVensimientoPSW"
+                ScrollBars="None" Width="700px">
+                <ContentCollection>
+                    <dx:PopupControlContentControl>
+                        <table>
+                            <tr>
+                                <td style="vertical-align: top">
+                                    <dx:ASPxButton ID="ASPxButton2" runat="server" AllowFocus="False" AutoPostBack="False" CausesValidation="False"
+                                        Cursor="auto" UseSubmitBehavior="False" RenderMode="Link" ClientInstanceName="ASPxButton2">
+                                        <Image IconID="status_warning_32x32"></Image>
+                                        <BackgroundImage Repeat="NoRepeat" />
+                                    </dx:ASPxButton>
+                                </td>
+                                <td>
+                                    <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="" EncodeHtml="False" ClientInstanceName="ASPxLabel1">
+                                    </dx:ASPxLabel>
+                                    <asp:HiddenField ID="Hpwd" runat="server" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <dx:ASPxButton ID="btnAceptarActPWD" runat="server" Text="Si" Visible="false">
+                                        <ClientSideEvents Click="function(s, e) { ppVensimientoPSW.Hide(); }" />
+                                    </dx:ASPxButton>
+                                    <dx:ASPxButton ID="btnCancelarActPWD" runat="server" Text="No" Visible="false">
+                                        <ClientSideEvents Click="function(s, e) { ppVensimientoPSW.Hide(); }" />
+                                    </dx:ASPxButton>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </dx:PopupControlContentControl>
+                </ContentCollection>
+                <ClientSideEvents Init="OnInit" />
+            </dx:ASPxPopupControl>
+
+        </div>
+    </form>
+</body>
+
+</html>
